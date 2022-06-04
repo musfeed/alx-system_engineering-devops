@@ -322,3 +322,148 @@ total 20
 Best School$
 julien@ubuntu:~/shell$
 </code></pre>
+
+ ### Repo:
+    * GitHub repository: alx-system_engineering-devops
+    * Directory: 0x02-shell_redirections
+    * File: 7-file
+ 
+ <h3 class="panel-title">
+      8. Save current state of directory
+    </h3>
+ 
+ <p>Write a script that writes into the file <code>ls_cwd_content</code> the result of the command <code>ls -la</code>. If the file <code>ls_cwd_content</code> already exists, it should be overwritten. If the file <code>ls_cwd_content</code> does not exist, create it.</p>
+ 
+ <pre><code>julien@ubuntu:/tmp/h$ ls -la
+total 20
+drwxrwxr-x  2 julien julien 4096 Sep 20 18:18 .
+drwxrwxrwt 13 root   root   4096 Sep 20 18:18 ..
+-rwxrw-r--  1 julien julien   36 Sep 20 18:18 8-cwd_state
+-rw-rw-r--  1 betty  julien   23 Sep 20 14:25 hello
+-rw-rw-r--  1 julien julien  926 Sep 20 17:52 iacta
+julien@ubuntu:/tmp/h$ ./8-cwd_state 
+julien@ubuntu:/tmp/h$ ls -la
+total 24
+drwxrwxr-x  2 julien julien 4096 Sep 20 18:18 .
+drwxrwxrwt 13 root   root   4096 Sep 20 18:18 ..
+-rwxrw-r--  1 julien julien   36 Sep 20 18:18 8-cwd_state
+-rw-rw-r--  1 betty  julien   23 Sep 20 14:25 hello
+-rw-rw-r--  1 julien julien  926 Sep 20 17:52 iacta
+-rw-rw-r--  1 julien julien  329 Sep 20 18:18 ls_cwd_content
+julien@ubuntu:/tmp/h$ cat ls_cwd_content 
+total 20
+drwxrwxr-x  2 julien julien 4096 Sep 20 18:18 .
+drwxrwxrwt 13 root   root   4096 Sep 20 18:18 ..
+-rwxrw-r--  1 julien julien   36 Sep 20 18:18 8-cwd_state
+-rw-rw-r--  1 betty  julien   23 Sep 20 14:25 hello
+-rw-rw-r--  1 julien julien  926 Sep 20 17:52 iacta
+-rw-rw-r--  1 julien julien    0 Sep 20 18:18 ls_cwd_content
+julien@ubuntu:/tmp/h$ 
+</code></pre>
+ 
+ 
+  ### Repo:
+    * GitHub repository: alx-system_engineering-devops
+    * Directory: 0x02-shell_redirections
+    * File: 8-cwd_state
+ 
+ <h3 class="panel-title">
+      9. Duplicate last line
+    </h3>
+ 
+ <p>Write a script that duplicates the last line of the file <code>iacta</code></p>
+
+<ul>
+<li>The file <code>iacta</code> will be in the working directory</li>
+</ul>
+
+<pre><code>julien@ubuntu:/tmp/h$ cat iacta 
+Alea iacta est
+
+Alea iacta est (&quot;The die is cast&quot;) is a Latin phrase attributed by Suetonius
+(as iacta alea est) to Julius Caesar on January 10, 49 BC
+as he led his army across the Rubicon river in Northern Italy. With this step,
+he entered Italy at the head of his army in defiance of the Senate and began
+his long civil war against Pompey and the Optimates. The phrase has been
+adopted in Italian (Il dado è tratto), Romanian (Zarurile au fost aruncate),
+Spanish (La suerte está echada), French (Les dés sont jetés), Portuguese (A
+sorte está lançada), Dutch (De teerling is geworpen),
+German (Der Würfel ist gefallen), Hungarian (A kocka el van vetve) and many other languages to
+indicate that events have passed a point of no return.
+
+Read more: https://en.wikipedia.org/wiki/Alea_iacta_est
+julien@ubuntu:/tmp/h$ ./9-duplicate_last_line 
+julien@ubuntu:/tmp/h$ cat iacta 
+Alea iacta est
+
+Alea iacta est (&quot;The die is cast&quot;) is a Latin phrase attributed by Suetonius
+(as iacta alea est) to Julius Caesar on January 10, 49 BC
+as he led his army across the Rubicon river in Northern Italy. With this step,
+he entered Italy at the head of his army in defiance of the Senate and began
+his long civil war against Pompey and the Optimates. The phrase has been
+adopted in Italian (Il dado è tratto), Romanian (Zarurile au fost aruncate),
+Spanish (La suerte está echada), French (Les dés sont jetés), Portuguese (A
+sorte está lançada), Dutch (De teerling is geworpen),
+German (Der Würfel ist gefallen), Hungarian (A kocka el van vetve) and many other languages to
+indicate that events have passed a point of no return.
+
+Read more: https://en.wikipedia.org/wiki/Alea_iacta_est
+Read more: https://en.wikipedia.org/wiki/Alea_iacta_est
+julien@ubuntu:/tmp/h$ 
+
+
+
+  ### Repo:
+      * GitHub repository: alx-system_engineering-devops
+      * Directory: 0x02-shell_redirections
+      * File: 9-duplicate_last_line
+    
+    
+    
+ <h3 class="panel-title">
+      10. No more javascript
+    </h3>
+
+<p>Write a script that deletes all the regular files (not the directories) with a <code>.js</code> extension that are present in the current directory and all its subfolders.</p>
+
+<pre><code>julien@ubuntu:/tmp/h$ ls -lR
+.:
+total 24
+-rwxrw-r-- 1 julien julien   49 Sep 20 18:29 10-no_more_js
+drwxrwxr-x 2 julien julien 4096 Sep 20 18:23 dir1
+drwxrwxr-x 2 julien julien 4096 Sep 20 18:24 dir.js
+-rw-rw-r-- 1 betty  julien   23 Sep 20 14:25 hello
+-rw-rw-r-- 1 julien julien  982 Sep 20 18:21 iacta
+-rw-rw-r-- 1 julien julien  329 Sep 20 18:18 ls_cwd_content
+-rw-rw-r-- 1 julien julien    0 Sep 20 18:23 main.js
+
+./dir1:
+total 0
+-rw-rw-r-- 1 julien julien 0 Sep 20 18:23 code.js
+
+./dir.js:
+total 0
+julien@ubuntu:/tmp/h$ ./10-no_more_js 
+julien@ubuntu:/tmp/h$ ls -lR
+.:
+total 24
+-rwxrw-r-- 1 julien julien   49 Sep 20 18:29 10-no_more_js
+drwxrwxr-x 2 julien julien 4096 Sep 20 18:29 dir1
+drwxrwxr-x 2 julien julien 4096 Sep 20 18:24 dir.js
+-rw-rw-r-- 1 betty  julien   23 Sep 20 14:25 hello
+-rw-rw-r-- 1 julien julien  982 Sep 20 18:21 iacta
+-rw-rw-r-- 1 julien julien  329 Sep 20 18:18 ls_cwd_content
+
+./dir1:
+total 0
+
+./dir.js:
+total 0
+julien@ubuntu:/tmp/h$ 
+</code></pre>
+
+### Repo:
+      * GitHub repository: alx-system_engineering-devops
+      * Directory: 0x02-shell_redirections
+      * File: 10-no_more_js
+ 
